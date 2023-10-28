@@ -73,6 +73,7 @@ dependencies:
   freezed: ^2.3.4
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
+  flutter_riverpod: ^2.4.4
 
 dev_dependencies:
   flutter_test:
@@ -110,6 +111,11 @@ flutter:
     - assets/image/icon/
     - assets/image/flag/
     - assets/image/darkmode/
+    - assets/image/detail/
+    - assets/image/fab/
+    - assets/image/home/
+    - assets/image/notification/
+    - assets/image/write/
     - assets/translations/
     - assets/
 

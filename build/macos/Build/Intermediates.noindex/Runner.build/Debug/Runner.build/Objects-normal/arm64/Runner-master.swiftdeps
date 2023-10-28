@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "4494dcd702525977137a0f4ab419c3a1edfe955dfee97b45ea55fa97d447eea4"
+build_start_time: [1698510359, 564308000]
+build_end_time: [1698510366, 520161000]
+inputs:
+  "/Users/jungdain/Documents/GitHub/rabbit_market_clone/macos/Flutter/GeneratedPluginRegistrant.swift": [1698510332, 361995683]
+  "/Users/jungdain/Documents/GitHub/rabbit_market_clone/macos/Runner/AppDelegate.swift": [1694100026, 0]
+  "/Users/jungdain/Documents/GitHub/rabbit_market_clone/macos/Runner/MainFlutterWindow.swift": [1694100026, 0]
