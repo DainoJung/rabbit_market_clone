@@ -812,6 +812,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "timeago",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/timeago-3.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "timing",
       "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/timing-1.0.1",
       "packageUri": "lib/",
@@ -944,7 +950,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-28T16:50:30.870958Z",
+  "generated": "2023-11-07T13:44:59.892653Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

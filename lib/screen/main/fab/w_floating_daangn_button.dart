@@ -3,11 +3,13 @@ import 'package:fast_app_base/common/dart/extension/num_duration_extension.dart'
 import 'package:fast_app_base/common/widget/animated_width_collapse.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
+import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FloatingDaangnButton extends ConsumerWidget {
   FloatingDaangnButton({super.key});
+  static const height = 145.0;
   final duration = 300.ms;
 
   @override
@@ -57,17 +59,26 @@ class FloatingDaangnButton extends ConsumerWidget {
               ),
               Tap(
                 onTap: () {
-                  ref.read(floatingButtonStateProvider.notifier).onTapButton();
+                  // final currentTab = ref.read(currentTabProvider);
+                  // switch (currentTab) {
+                  //   case TabItem.home:
+                  //   case TabItem.localLife:
+                  //   case TabItem.nearMe:
+                  //   case TabItem.chat:
+                  //   case TabItem.my:
+                  // }
+                  ref.read(floatingButtonStateProvider.notifier).toggleMenu();
                 },
                 child: AnimatedContainer(
-                  duration: duration,
                   height: 60,
+                  duration: duration,
                   padding: const EdgeInsets.symmetric(horizontal: 18),
                   decoration: BoxDecoration(
-                      color: isExpanded
-                          ? context.appColors.floatingActionLayer
-                          : const Color(0xffff791f),
-                      borderRadius: BorderRadius.circular(30)),
+                    color: isExpanded
+                        ? context.appColors.floatingActionLayer
+                        : const Color(0xffff791f),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -79,13 +90,15 @@ class FloatingDaangnButton extends ConsumerWidget {
                         visible: !isSmall,
                         duration: duration,
                         child: '글쓰기'.text.make(),
-                      )
+                      ),
                     ],
                   ),
-                ).pOnly(
-                    bottom: MainScreenState.bottomNavigationBarHeight +
-                        context.viewPaddingBottom,
-                    right: 20),
+                ),
+              ).pOnly(
+                bottom: MainScreenState.bottomNavigationBarHeight +
+                    context.viewPaddingBottom -
+                    20,
+                right: 15,
               ),
             ],
           ),

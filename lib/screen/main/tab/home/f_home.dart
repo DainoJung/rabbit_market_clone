@@ -1,4 +1,9 @@
+import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/common/dart/extension/num_duration_extension.dart';
+import 'package:fast_app_base/entity/dummies.dart';
+import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
+import 'package:fast_app_base/screen/main/tab/home/w_product_post_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,6 +16,7 @@ class HomeFragment extends ConsumerStatefulWidget {
 
 class _HomeFragmentState extends ConsumerState<HomeFragment> {
   final scrollController = ScrollController();
+  String title = '플러터동';
 
   @override
   void initState() {
@@ -27,15 +33,58 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
     super.initState();
   }
 
+  bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      controller: scrollController,
+    return Column(
       children: [
-        Container(height: 500, color: Colors.red),
-        Container(height: 500, color: Colors.blue),
-        Container(height: 500, color: Colors.red),
-        Container(height: 500, color: Colors.blue),
+        AppBar(
+          title: PopupMenuButton<String>(
+            position: PopupMenuPosition.under,
+            onSelected: (value) {
+              setState(() {
+                title = value;
+              });
+            },
+            onOpened: () {
+              setState(() {
+                isExpanded = true;
+              });
+            },
+            onCanceled: () {
+              setState(() {
+                isExpanded = false;
+              });
+            },
+            itemBuilder: (context) => ["다트동", "앱동"]
+                .map((e) => PopupMenuItem(
+                      value: e,
+                      child: Text(e),
+                    ))
+                .toList(),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text(title),
+                AnimatedRotation(
+                  turns: isExpanded ? 0.5 : 0,
+                  duration: 300.ms,
+                  child: const Icon(Icons.expand_more),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Expanded(
+          child: ListView.separated(
+            padding: const EdgeInsets.only(bottom: FloatingDaangnButton.height),
+            controller: scrollController,
+            itemBuilder: (context, index) => ProductPostItem(postList[index]),
+            itemCount: postList.length,
+            separatorBuilder: (context, index) =>
+                const Line().pSymmetric(h: 15),
+          ),
+        ),
       ],
     );
   }
