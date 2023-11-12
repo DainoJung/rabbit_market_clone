@@ -260,6 +260,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_hooks",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/flutter_hooks-0.20.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
       "packageUri": "lib/",
@@ -285,7 +291,7 @@
     },
     {
       "name": "flutter_riverpod",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.4",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.5",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -348,6 +354,12 @@
       "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/graphs-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "hooks_riverpod",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "html",
@@ -609,7 +621,7 @@
     },
     {
       "name": "riverpod",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/riverpod-2.4.4",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/riverpod-2.4.5",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -950,7 +962,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-07T13:44:59.892653Z",
+  "generated": "2023-11-12T10:16:17.130546Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }
