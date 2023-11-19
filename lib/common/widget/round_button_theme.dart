@@ -2,10 +2,12 @@ import 'package:fast_app_base/common/common.dart';
 import 'package:flutter/material.dart';
 
 enum RoundButtonTheme {
-  blue(AppColors.blue, Colors.white, AppColors.blue, backgroundColorProvider: blueColorProvider),
-  whiteWithBlueBorder(Colors.white, AppColors.darkBlue, AppColors.blue,
+  grey(AppColors.brightGrey, Colors.black, AppColors.brightGrey,
       backgroundColorProvider: blueColorProvider),
-  blink(AppColors.blue, Colors.white, Colors.black, backgroundColorProvider: blueColorProvider);
+  blackWithGreyBorder(Colors.black, Colors.white, AppColors.brightGrey,
+      backgroundColorProvider: blueColorProvider),
+  blink(AppColors.blue, Colors.white, Colors.black,
+      backgroundColorProvider: blueColorProvider);
 
   const RoundButtonTheme(
     this.bgColor,
@@ -22,6 +24,8 @@ enum RoundButtonTheme {
   final Color shadowColor;
 }
 
-Color blueColorProvider(BuildContext context) => context.appColors.blueButtonBackground;
+Color blueColorProvider(BuildContext context) =>
+    context.appColors.blueButtonBackground;
 
-Color Function(BuildContext context) defaultColorProvider(Color color) => blueColorProvider;
+Color Function(BuildContext context) defaultColorProvider(Color color) =>
+    blueColorProvider;

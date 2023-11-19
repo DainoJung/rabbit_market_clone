@@ -164,21 +164,22 @@ class _ImagePager extends StatelessWidget {
                     ))
                 .toList(),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: SmoothPageIndicator(
-              controller: pageController,
-              count: simpleProductPost.product.images.length,
-              effect: const JumpingDotEffect(
-                dotColor: Colors.white54,
-                activeDotColor: Colors.black45,
-                dotHeight: 12,
-                dotWidth: 12,
-                verticalOffset: 10,
+          if (simpleProductPost.product.images.length > 1)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: SmoothPageIndicator(
+                controller: pageController,
+                count: simpleProductPost.product.images.length,
+                effect: const JumpingDotEffect(
+                  dotColor: Colors.white54,
+                  activeDotColor: Colors.black45,
+                  dotHeight: 12,
+                  dotWidth: 12,
+                  verticalOffset: 10,
+                ),
+                onDotClicked: (index) {},
               ),
-              onDotClicked: (index) {},
-            ),
-          )
+            )
         ],
       ),
     );

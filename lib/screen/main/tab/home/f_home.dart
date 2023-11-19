@@ -3,6 +3,7 @@ import 'package:fast_app_base/common/dart/extension/num_duration_extension.dart'
 import 'package:fast_app_base/entity/dummies.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.dart';
+import 'package:fast_app_base/screen/main/tab/home/provider/post_provider.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_product_post_item.dart';
 import 'package:fast_app_base/screen/notification/s_notification.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,7 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
+    final postList = ref.watch(psotProvider);
     return Column(
       children: [
         AppBar(
