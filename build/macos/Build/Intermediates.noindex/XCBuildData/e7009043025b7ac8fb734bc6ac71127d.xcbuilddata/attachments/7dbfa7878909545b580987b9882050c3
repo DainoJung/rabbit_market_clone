@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/jungdain/Documents/GitHub/rabbit_market_clone/build/macos/Build/Products/Debug/isar_flutter_libs/isar_flutter_libs.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/jungdain/Documents/GitHub/rabbit_market_clone/build/macos/Build/Intermediates.noindex/Pods.build/Debug/isar_flutter_libs.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/jungdain/Documents/GitHub/rabbit_market_clone/build/macos/Build/Products/Debug/isar_flutter_libs/isar_flutter_libs.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "isar_flutter_libs-Swift.h",
+      'external-contents': "/Users/jungdain/Documents/GitHub/rabbit_market_clone/build/macos/Build/Intermediates.noindex/Pods.build/Debug/isar_flutter_libs.build/unextended-interface-header.h",
+    }]
+    }]
+}

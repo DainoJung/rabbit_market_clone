@@ -141,7 +141,7 @@
     },
     {
       "name": "collection",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/collection-1.17.2",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -251,7 +251,7 @@
       "name": "flutter",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.7/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_cache_manager",
@@ -275,7 +275,7 @@
       "name": "flutter_localizations",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.7/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_native_splash",
@@ -305,13 +305,13 @@
       "name": "flutter_test",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.7/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.7/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "freezed",
@@ -471,7 +471,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/meta-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -707,7 +707,13 @@
       "name": "sky_engine",
       "rootUri": "file:///usr/local/Caskroom/flutter/3.7.7/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "smooth_page_indicator",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/smooth_page_indicator-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "source_gen",
@@ -759,7 +765,7 @@
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/stack_trace-1.11.0",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -771,9 +777,9 @@
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/stream_channel-2.1.1",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "stream_transform",
@@ -801,21 +807,21 @@
     },
     {
       "name": "test",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test-1.24.3",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test-1.24.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test_api-0.6.0",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test_api-0.6.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "test_core",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test_core-0.5.3",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/test_core-0.5.9",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "time",
@@ -909,9 +915,9 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/web-0.1.4-beta",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/web-0.3.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "web_socket_channel",
@@ -962,7 +968,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-12T10:16:17.130546Z",
+  "generated": "2023-11-18T04:19:55.954371Z",
   "generator": "pub",
-  "generatorVersion": "3.1.5"
+  "generatorVersion": "3.2.0"
 }
