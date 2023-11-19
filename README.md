@@ -1,6 +1,6 @@
-# fast_app_base
+# 당근마켓 클론
 
-A new Flutter project.
+중고거래 플랫폼인 당근마켓 클론앱을 만들어봤습니다.
 
 ## Getting Started
 
