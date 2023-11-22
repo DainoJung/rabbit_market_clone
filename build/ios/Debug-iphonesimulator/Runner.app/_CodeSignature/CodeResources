@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		dYwYSB4knHc0qzqcy9wrDMZ8AP8=
+		+ffpNiRkrvs8XzgbZQjaIE9yZN4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		b0BiDxsaSwwJghXZtfYBG5ax9Rk=
+		UYafrwA7mUhmX0NyQq2FfSKyOLA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		qGts16wgwZCqjS+M4JCCPcxDGjo=
+		sDWQZ4zba7J9+yAQfxvDDtK8WK8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/image/darkmode/moon.png</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		BSjd6f4aQDq1qd2vODC8/Ih0ahU=
+		ySdnD0dthZlQkyJtuN6purSFBvE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/eva_icons_flutter/lib/fonts/Eva-Icons.ttf</key>
 		<data>
@@ -303,6 +303,18 @@
 		<key>Frameworks/flutter_native_splash.framework/flutter_native_splash</key>
 		<data>
 		TJiDpzpJW3wu/e6kEUygkTsKVOQ=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<data>
+		KTPrfF83820EWuie/5fZI57tXaU=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		GOyatLdizcjDW50vDeviDyIXpGg=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<data>
+		XwTlnMvtauh0aCACtyN9ARdvyrY=
 		</data>
 		<key>Frameworks/isar_flutter_libs.framework/Info.plist</key>
 		<data>
@@ -449,7 +461,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9fhhsBOuNif+4RY8FORWiz03iyNAJIY9DSaiGvZts8M=
+			3KEh6mL4UDmRoixIzNCwfv+K1tQlTZiZHpinwhbbMQU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -463,7 +475,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OH6pQXTSZVvMQEPC7Ih6BZcnNfAj3LaWBd+k3uYx01U=
+			zN0vpIlc9LN4cD0n4OlcEBQcMKqsEHjcHPUIQCm2ido=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -491,7 +503,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			D3i4euodTpZff3apVBiC5hqQ5SEVfBLBJuUx5eeKPik=
+			+5DDT1u7W4WCJO4VtyBK0KxM/u6mM1A1qjdMDK/MShM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/image/darkmode/moon.png</key>
@@ -687,7 +699,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/PPUnCUat/moE1zMMqmCBMOxlXgl02RWJuvyXDyIdwc=
+			fUsGeTX6xtSPexcNHgLvAbtYG0olpKKYbZ6E/YdQ9jc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/eva_icons_flutter/lib/fonts/Eva-Icons.ttf</key>
@@ -898,6 +910,27 @@
 			<key>hash2</key>
 			<data>
 			jxAlDE4gTO7J2Y5AzLxS1fkrKUR6OkPA0UZgVAs9RxA=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6/Ko7baLoUJf8eOzu9E3tojiXMDZ29sPh/f61mRwYV4=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O1yeSbnKnsnfQsDOnj+84/6NRgDd4B9L8gyHIowSdog=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sEM1KMBDyHJY5mXFIIzJ5Rn+1q0b/NpRj+x19QRJpos=
 			</data>
 		</dict>
 		<key>Frameworks/isar_flutter_libs.framework/Info.plist</key>

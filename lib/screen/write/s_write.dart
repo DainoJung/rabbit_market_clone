@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:math';
+
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/util/app_keyboard_util.dart';
 import 'package:fast_app_base/common/widget/round_button_theme.dart';
@@ -7,12 +10,12 @@ import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
 import 'package:fast_app_base/entity/product/product_status.dart';
 import 'package:fast_app_base/entity/product/vo_product.dart';
 import 'package:fast_app_base/entity/user/vo_address.dart';
-import 'package:fast_app_base/screen/main/tab/home/f_home.dart';
 import 'package:fast_app_base/screen/main/tab/home/provider/post_provider.dart';
 import 'package:fast_app_base/screen/post_detail/s_post_detail.dart';
+import 'package:fast_app_base/screen/write/d_select_image_source.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:image_picker/image_picker.dart';
 
 class WriteScreen extends ConsumerStatefulWidget {
   const WriteScreen({super.key});
@@ -23,7 +26,7 @@ class WriteScreen extends ConsumerStatefulWidget {
 
 class _WriteScreenState extends ConsumerState<WriteScreen>
     with KeyboardDetector {
-  final List<String> imageList = [picSum(442)];
+  final List<String> imageList = [];
 
   final titleController = TextEditingController();
   final priceController = TextEditingController();
@@ -52,10 +55,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
         appBar: AppBar(
           title: '내 물건 팔기'.text.bold.make(),
           actions: [
-            Tap(
-              onTap: () {},
-              child: '임시저장'.text.make().p(15),
-            ),
+            Tap(onTap: () {}, child: '임시저장'.text.make().p(15)),
           ],
         ),
         body: SingleChildScrollView(
@@ -65,7 +65,22 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
             children: [
               _ImageSelectWidget(
                 imageList,
-                onTap: () {},
+                onTap: () async {
+                  final selectedSource = await SelectImageSourceDialog().show();
+
+                  if (selectedSource == null) {
+                    return;
+                  }
+
+                  final file =
+                      await ImagePicker().pickImage(source: selectedSource);
+                  if (file == null) {
+                    return;
+                  }
+                  setState(() {
+                    imageList.add(file.path);
+                  });
+                },
               ),
               _TitleEditor(titleController),
               height30,
@@ -98,7 +113,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
                   setState(() {
                     isLoading = true;
                   });
-                  final list = ref.read(psotProvider);
+                  final list = ref.read(postProvider);
                   final simpleProductPost = SimpleProductPost(
                     6,
                     user3,
@@ -115,7 +130,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
                     0,
                     DateTime.now(),
                   );
-                  ref.read(psotProvider.notifier).state = List.of(list)
+                  ref.read(postProvider.notifier).state = List.of(list)
                     ..add(simpleProductPost);
                   Nav.pop(context);
                   Nav.push(
@@ -150,26 +165,75 @@ class _ImageSelectWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            SizedBox(
-              width: 80,
-              height: 80,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            SelectImageButton(onTap: onTap, imageList: imageList)
+                .pOnly(top: 10, right: 4),
+            ...imageList.map(
+              (e) => Stack(
                 children: [
-                  const Icon(Icons.camera_alt),
-                  RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                      text: imageList.length.toString(),
-                      style: const TextStyle(color: Colors.orange),
+                  SizedBox(
+                    width: 80,
+                    height: 80,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.file(
+                        File(e),
+                        fit: BoxFit.fill,
+                      ).box.rounded.border(color: Colors.grey).make(),
                     ),
-                    const TextSpan(text: '/10'),
-                  ])),
+                  ).pOnly(left: 4, right: 15, top: 15),
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Tap(
+                        onTap: (){},
+                        child: Transform.rotate(
+                          angle: pi / 4,
+                          child: const Icon(Icons.add_circle),
+                        ).pOnly(left: 30, bottom: 30),
+                      ),
+                    ),
+                  ),
                 ],
-              ).box.rounded.border(color: Colors.grey).make(),
-            )
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class SelectImageButton extends StatelessWidget {
+  const SelectImageButton({
+    super.key,
+    required this.onTap,
+    required this.imageList,
+  });
+
+  final VoidCallback onTap;
+  final List<String> imageList;
+
+  @override
+  Widget build(BuildContext context) {
+    return Tap(
+      onTap: onTap,
+      child: SizedBox(
+        width: 80,
+        height: 80,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.camera_alt),
+            RichText(
+                text: TextSpan(children: [
+              TextSpan(
+                text: imageList.length.toString(),
+                style: const TextStyle(color: Colors.orange),
+              ),
+              const TextSpan(text: '/10'),
+            ])),
+          ],
+        ).box.rounded.border(color: Colors.grey).make(),
       ),
     );
   }
@@ -223,6 +287,7 @@ class _PriceEditorState extends State<_PriceEditor> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         '거래 방식'.text.bold.make(),
+        height10,
         Row(
           children: [
             RoundButton(
@@ -241,6 +306,7 @@ class _PriceEditorState extends State<_PriceEditor> {
                 });
               },
             ),
+            width10,
             RoundButton(
               text: '나눔하기',
               fontWeight: FontWeight.bold,
@@ -256,7 +322,7 @@ class _PriceEditorState extends State<_PriceEditor> {
             ),
           ],
         ),
-        height5,
+        height10,
         TextField(
           focusNode: priceNode,
           controller: widget.controller,
@@ -288,7 +354,7 @@ class _DescEditor extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         '자세한 설명'.text.bold.make(),
-        height5,
+        height10,
         TextField(
           controller: controller,
           maxLines: 7,

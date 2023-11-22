@@ -26,14 +26,15 @@ class PostDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final productPost = ref.watch(productPostProvider(id));
     return productPost.when(
-        data: (data) => _PostDetail(
-              simpleProductPost ?? data.simpleProductPost,
-              productPost: data,
-            ),
-        error: (error, trace) => "에러가 발생했습니다.".text.make(),
-        loading: () => simpleProductPost != null
-            ? _PostDetail(simpleProductPost!)
-            : const Center(child: CircularProgressIndicator()));
+      data: (data) => _PostDetail(
+        simpleProductPost ?? data.simpleProductPost,
+        productPost: data,
+      ),
+      error: (error, trace) => "에러가 발생했습니다.".text.make(),
+      loading: () => simpleProductPost != null
+          ? _PostDetail(simpleProductPost!)
+          : const Center(child: CircularProgressIndicator()),
+    );
   }
 }
 
