@@ -10,10 +10,13 @@ import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
 import 'package:fast_app_base/entity/product/product_status.dart';
 import 'package:fast_app_base/entity/product/vo_product.dart';
 import 'package:fast_app_base/entity/user/vo_address.dart';
+import 'package:fast_app_base/screen/dialog/d_message.dart';
 import 'package:fast_app_base/screen/main/tab/home/provider/post_provider.dart';
 import 'package:fast_app_base/screen/post_detail/s_post_detail.dart';
 import 'package:fast_app_base/screen/write/d_select_image_source.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/cli_commands.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -72,13 +75,27 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
                     return;
                   }
 
-                  final file =
-                      await ImagePicker().pickImage(source: selectedSource);
-                  if (file == null) {
-                    return;
+                  try {
+                    final file =
+                        await ImagePicker().pickImage(source: selectedSource);
+                    if (file == null) {
+                      return;
+                    }
+                    setState(() {
+                      imageList.add(file.path);
+                    });
+                  } on PlatformException catch (e) {
+                    switch (e.code) {
+                      case 'incalid_image':
+                        MessageDialog('지원하지 않는 이미지 형식입니다.').show();
+                    }
+                  } catch (e) {
+                    // 사진 권한필요해요
                   }
+                },
+                onTapDeleteImage: (imagePath) {
                   setState(() {
-                    imageList.add(file.path);
+                    imageList.remove(imagePath);
                   });
                 },
               ),
@@ -154,8 +171,10 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
 class _ImageSelectWidget extends StatelessWidget {
   final List<String> imageList;
   final VoidCallback onTap;
+  final void Function(String path) onTapDeleteImage;
 
-  const _ImageSelectWidget(this.imageList, {required this.onTap});
+  const _ImageSelectWidget(this.imageList,
+      {required this.onTap, required this.onTapDeleteImage});
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +187,7 @@ class _ImageSelectWidget extends StatelessWidget {
             SelectImageButton(onTap: onTap, imageList: imageList)
                 .pOnly(top: 10, right: 4),
             ...imageList.map(
-              (e) => Stack(
+              (imagePath) => Stack(
                 children: [
                   SizedBox(
                     width: 80,
@@ -176,7 +195,7 @@ class _ImageSelectWidget extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.file(
-                        File(e),
+                        File(imagePath),
                         fit: BoxFit.fill,
                       ).box.rounded.border(color: Colors.grey).make(),
                     ),
@@ -185,7 +204,9 @@ class _ImageSelectWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topRight,
                       child: Tap(
-                        onTap: (){},
+                        onTap: () {
+                          onTapDeleteImage(imagePath);
+                        },
                         child: Transform.rotate(
                           angle: pi / 4,
                           child: const Icon(Icons.add_circle),
