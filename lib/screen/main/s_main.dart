@@ -32,7 +32,7 @@ class MainScreenState extends ConsumerState<MainScreen>
   bool get extendBody => true;
 
   static double get bottomNavigationBarBorderRadius => 30.0;
-  static const bottomNavigationBarHeight = 100.0;
+  static const bottomNavigationBarHeight = 60.0;
 
   @override
   void initState() {

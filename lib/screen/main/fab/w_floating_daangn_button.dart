@@ -122,8 +122,8 @@ class FloatingDaangnButton extends ConsumerWidget {
                 ),
               ).pOnly(
                 bottom: MainScreenState.bottomNavigationBarHeight +
-                    context.viewPaddingBottom -
-                    20,
+                    context.viewPaddingBottom +
+                    5,
                 right: 15,
               ),
             ],

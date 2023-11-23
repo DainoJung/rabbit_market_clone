@@ -86,7 +86,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
                     });
                   } on PlatformException catch (e) {
                     switch (e.code) {
-                      case 'incalid_image':
+                      case 'invalid_image':
                         MessageDialog('지원하지 않는 이미지 형식입니다.').show();
                     }
                   } catch (e) {
