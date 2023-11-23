@@ -12,11 +12,26 @@ class ProductPostItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tap(
+      // 투명 영역 터치 가능
+      // behavior: HitTestBehavior.translucent,
+      // onTapUp: (details) {
+      //   Nav.pushWithRippleEffect(
+      //     PostDetailScreen(
+      //       post.id,
+      //       simpleProductPost: post,
+      //     ),
+      //     offset: Offset(details.globalPosition.dx, details.globalPosition.dy),
+      //     durationMs: 800,
+      //   );
+      // },
       onTap: () {
-        Nav.push(PostDetailScreen(
-          post.id,
-          simpleProductPost: post,
-        ));
+        Nav.push(
+          PostDetailScreen(
+            post.id,
+            simpleProductPost: post,
+          ),
+          // context: context,
+        );
       },
       child: Stack(
         children: [

@@ -194,11 +194,23 @@ class _AppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
-      leading: IconButton(
-        onPressed: () {
-          Nav.pop(context);
-        },
-        icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+      leading: Row(
+        children: [
+          IconButton(
+            onPressed: () {
+              Nav.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                color: Colors.white),
+          ),
+          // 화면 다 지우기
+          // IconButton(
+          //   onPressed: () {
+          //     Nav.clearAll(context: context);
+          //   },
+          //   icon: const Icon(Icons.home, color: Colors.white),
+          // ),
+        ],
       ),
       actions: [
         IconButton(

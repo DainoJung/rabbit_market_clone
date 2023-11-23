@@ -49,6 +49,8 @@ class MainScreenState extends ConsumerState<MainScreen>
             Scaffold(
               extendBody: extendBody, //bottomNavigationBar 아래 영역 까지 그림
               drawer: const MenuDrawer(),
+              // 드래그 빼기
+              drawerEnableOpenDragGesture: false,
               body: Container(
                 padding: EdgeInsets.only(
                     bottom:
