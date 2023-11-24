@@ -380,6 +380,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "go_router",
+      "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/go_router-12.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "google_fonts",
       "rootUri": "file:///Users/jungdain/.pub-cache/hosted/pub.dev/google_fonts-4.0.5",
       "packageUri": "lib/",
@@ -1052,7 +1058,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-21T15:41:22.774917Z",
+  "generated": "2023-11-24T02:30:19.320118Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }

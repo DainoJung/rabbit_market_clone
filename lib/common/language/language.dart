@@ -17,6 +17,7 @@ enum Language {
   }
 }
 
-Language get currentLanguage => App.navigatorKey.currentContext!.locale.languageCode == 'ko'
-    ? Language.korean
-    : Language.english;
+Language get currentLanguage =>
+    App.scaffoldMessengerKey.currentContext!.locale.languageCode == 'ko'
+        ? Language.korean
+        : Language.english;

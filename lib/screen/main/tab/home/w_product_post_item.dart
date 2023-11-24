@@ -1,6 +1,5 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
-import 'package:fast_app_base/screen/post_detail/s_post_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -25,13 +24,14 @@ class ProductPostItem extends StatelessWidget {
       //   );
       // },
       onTap: () {
-        Nav.push(
-          PostDetailScreen(
-            post.id,
-            simpleProductPost: post,
-          ),
-          // context: context,
-        );
+        // Nav.push(
+        //   PostDetailScreen(
+        //     post.id,
+        //     simpleProductPost: post,
+        //   ),
+        //   // context: context,
+        // );
+        context.go('/main/localLife/${post.id}', extra: );
       },
       child: Stack(
         children: [
