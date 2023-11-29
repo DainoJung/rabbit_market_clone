@@ -6,7 +6,7 @@ import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
 import 'package:fast_app_base/entity/product/vo_product.dart';
 import 'package:fast_app_base/screen/post_detail/provider/product_post_provider.dart';
 import 'package:fast_app_base/screen/post_detail/w_post_content.dart';
-import 'package:fast_app_base/screen/post_detail/w_user_prodile.dart';
+import 'package:fast_app_base/screen/post_detail/w_user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

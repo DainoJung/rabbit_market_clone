@@ -4,7 +4,7 @@ import 'w_floating_daangn_button.state.dart';
 final floatingButtonStateProvider =
     StateNotifierProvider<FloatingButtonStateNotifier, FloatingButtonState>(
   (ref) => FloatingButtonStateNotifier(
-    FloatingButtonState(false, false),
+    FloatingButtonState(false, false, false),
   ),
 );
 
@@ -41,5 +41,13 @@ class FloatingButtonStateNotifier extends StateNotifier<FloatingButtonState> {
       return;
     }
     state = state.copyWith(isSmall: isSmall);
+  }
+
+  void hideButton() {
+    state = state.copyWith(isHided: true);
+  }
+
+  void showButton() {
+    state = state.copyWith(isHided: false);
   }
 }

@@ -31,7 +31,7 @@ class ProductPostItem extends StatelessWidget {
         //   ),
         //   // context: context,
         // );
-        context.go('/main/localLife/${post.id}', extra: );
+        context.go('/main/localLife/${post.id}', extra: post);
       },
       child: Stack(
         children: [
