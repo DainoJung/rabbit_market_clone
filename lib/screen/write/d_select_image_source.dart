@@ -44,7 +44,7 @@ class _SelectImageSourceDialogState
               const Line().pSymmetric(h: 20),
               Tap(
                 onTap: () {
-                  widget.hide(ImageSource.camera);
+                  widget.hide(ImageSource.gallery);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

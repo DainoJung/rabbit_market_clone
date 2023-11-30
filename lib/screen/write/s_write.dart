@@ -19,6 +19,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/cli_commands.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class WriteScreen extends ConsumerStatefulWidget {
   const WriteScreen({super.key});
@@ -37,8 +38,19 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
 
   bool isLoading = false;
 
+  getPermission() async {
+    var status = await Permission.camera.status;
+    if (status.isGranted) {
+      print("허락됨");
+    } else if (status.isDenied) {
+      print("거절됨");
+      Permission.contacts.request();
+    }
+  }
+
   @override
   void initState() {
+    getPermission();
     titleController.addListener(() {
       setState(() {});
     });
@@ -56,9 +68,9 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: '내 물건 팔기'.text.bold.make(),
+          title: 'sell_my_thing'.tr().text.bold.make(),
           actions: [
-            Tap(onTap: () {}, child: '임시저장'.text.make().p(15)),
+            Tap(onTap: () {}, child: 'temp_save'.tr().text.make().p(15)),
           ],
         ),
         body: SingleChildScrollView(
@@ -349,12 +361,12 @@ class _PriceEditorState extends State<_PriceEditor> {
           controller: widget.controller,
           keyboardType: TextInputType.number,
           enabled: !isDonateMode,
-          decoration: const InputDecoration(
-            hintText: '₩ 가격을 입력해주세요.',
-            border: OutlineInputBorder(
+          decoration: InputDecoration(
+            hintText: 'input_price'.tr(namedArgs: {'test': '홍길동'}),
+            border: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.orange),
             ),
           ),

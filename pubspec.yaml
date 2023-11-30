@@ -82,6 +82,7 @@ dependencies:
   go_router: ^12.1.1
   firebase_core: ^2.23.0
   firebase_messaging: ^14.7.5
+  permission_handler: ^11.1.0
 
 dev_dependencies:
   flutter_test:
