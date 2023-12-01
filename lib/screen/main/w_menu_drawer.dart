@@ -1,4 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:fast_app_base/common/dart/extension/num_duration_extension.dart';
+import 'package:fast_app_base/common/theme/custom_theme.dart';
 import 'package:fast_app_base/screen/opensource/s_opensource.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +64,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
 
   bool isSmallScreen(BuildContext context) =>
       context.deviceHeight < MenuDrawer.minHeightForScrollView;
+  bool isExpanded = false;
 
   Container getMenus(BuildContext context) {
     return Container(
@@ -110,16 +113,46 @@ class _MenuDrawerState extends State<MenuDrawer> {
           isSmallScreen(context) ? const Height(10) : const EmptyExpanded(),
           MouseRegion(
             cursor: SystemMouseCursors.click,
-            child: ModeSwitch(
-              value: context.isDarkMode,
-              onChanged: (value) {
-                ThemeUtil.toggleTheme(context);
+            // child: ModeSwitch(
+            //   value: context.isDarkMode,
+            //   onChanged: (value) {
+            //     ThemeUtil.toggleTheme(context);
+            //   },
+            //   height: 30,
+            //   activeThumbImage: Image.asset('$basePath/darkmode/moon.png'),
+            //   inactiveThumbImage: Image.asset('$basePath/darkmode/sun.png'),
+            //   activeThumbColor: Colors.transparent,
+            //   inactiveThumbColor: Colors.transparent,
+            // ).pOnly(left: 20),
+            child: PopupMenuButton<CustomTheme>(
+              position: PopupMenuPosition.under,
+              onSelected: (value) {
+                context.changeTheme(value);
               },
-              height: 30,
-              activeThumbImage: Image.asset('$basePath/darkmode/moon.png'),
-              inactiveThumbImage: Image.asset('$basePath/darkmode/sun.png'),
-              activeThumbColor: Colors.transparent,
-              inactiveThumbColor: Colors.transparent,
+              itemBuilder: (context) => CustomTheme.values
+                  .map(
+                    (theme) => PopupMenuItem(
+                      value: theme,
+                      child: Row(
+                        children: [
+                          CircleAvatar(backgroundColor: theme.color),
+                          Text(theme.name),
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList(),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(context.themeType.name),
+                  AnimatedRotation(
+                    turns: isExpanded ? 0.5 : 0,
+                    duration: 300.ms,
+                    child: const Icon(Icons.expand_more),
+                  ),
+                ],
+              ),
             ).pOnly(left: 20),
           ),
           const Height(10),
@@ -145,10 +178,6 @@ class _MenuDrawerState extends State<MenuDrawer> {
         ],
       ),
     );
-  }
-
-  void toggleTheme() {
-    ThemeUtil.toggleTheme(context);
   }
 
   void closeDrawer(BuildContext context) {

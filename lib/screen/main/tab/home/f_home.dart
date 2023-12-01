@@ -48,21 +48,13 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
                 title = value;
               });
             },
-            onOpened: () {
-              setState(() {
-                isExpanded = true;
-              });
-            },
-            onCanceled: () {
-              setState(() {
-                isExpanded = false;
-              });
-            },
             itemBuilder: (context) => ["다트동", "앱동"]
-                .map((e) => PopupMenuItem(
-                      value: e,
-                      child: Text(e),
-                    ))
+                .map(
+                  (e) => PopupMenuItem(
+                    value: e,
+                    child: Text(e),
+                  ),
+                )
                 .toList(),
             child: Row(
               mainAxisSize: MainAxisSize.max,

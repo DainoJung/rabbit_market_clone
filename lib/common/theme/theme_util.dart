@@ -14,15 +14,15 @@ class ThemeUtil {
     context.changeTheme(theme);
   }
 
-  static void toggleTheme(BuildContext context) {
-    final theme = context.themeType;
-    switch (theme) {
-      case CustomTheme.dark:
-        changeTheme(context, CustomTheme.light);
-        break;
-      case CustomTheme.light:
-        changeTheme(context, CustomTheme.dark);
-        break;
-    }
-  }
+  // static void toggleTheme(BuildContext context) {
+  //   final theme = context.themeType;
+  //   switch (theme) {
+  //     case CustomTheme.dark:
+  //       changeTheme(context, CustomTheme.light);
+  //       break;
+  //     case CustomTheme.light:
+  //       changeTheme(context, CustomTheme.dark);
+  //       break;
+  //   }
+  // }
 }

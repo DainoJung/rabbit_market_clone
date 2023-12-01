@@ -1,6 +1,5 @@
 import 'package:fast_app_base/common/widget/w_height_and_width.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 const spacer = Spacer();
 
